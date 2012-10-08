@@ -1,0 +1,9 @@
+Here is my assignment for this week.
+Parallel Circuit
+Schematic and calculation
+  
+Series Circuit
+Schematic and calculation
+Actually I'm little confused about the range of  LED voltage and I was not sure what resistor I should use when I was making a circuit.
+But I felt excited that it seems I haven't forgotten all about physics I learnt in high school...
+ 
