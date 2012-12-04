@@ -1,0 +1,129 @@
+TestApp.h
+
+#pragma once
+
+#include "ofMain.h"
+
+struct Ball {
+    int x;
+    int y;
+    int vx;
+    int vy;
+    int radius;
+    
+};
+
+
+class testApp : public ofBaseApp{
+public:
+    void setup();
+    void update();
+    void draw();
+    
+    void keyPressed  (int key);
+    void keyReleased(int key);
+    void mouseMoved(int x, int y );
+    void mouseDragged(int x, int y, int button);
+    void mousePressed(int x, int y, int button);
+    void mouseReleased(int x, int y, int button);
+    void windowResized(int w, int h);
+    
+    Ball ball;
+    
+};
+
+
+
+
+
+
+TestApp.cpp
+#include "testApp.h"
+
+//--------------------------------------------------------------
+void testApp::setup(){
+    ofBackground(0, 0, 0);
+    ofSetFrameRate(30);
+    
+   
+        ball.x= ofRandom(40,ofGetWidth()-40);
+        ball.y = ofRandom(40,ofGetHeight()-40);
+        ball.vx = ofRandom(-10,10);
+        ball.vy = ofRandom(-10,10);
+        ball.radius = 40;
+        
+}
+
+//--------------------------------------------------------------
+void testApp::update(){
+
+        
+        ball.x = ball.x + ball.vx;
+        ball.y = ball.y + ball.vy;
+        
+        if (ball.x<0+40 || ball.x > ofGetWidth()-40) {
+            ball.vx = -ball.vx;
+        }
+        
+        if (ball.y<0+40 || ball.y > ofGetHeight()-40) {
+            ball.vy = -ball.vy;
+        }
+    
+
+}
+
+//--------------------------------------------------------------
+void testApp::draw(){
+
+   
+    
+        ofSetColor(255, 255, 0);
+        ofCircle(ball.x, ball.y, ball.radius);
+       
+    
+    
+    
+    
+
+
+}
+
+//--------------------------------------------------------------
+void testApp::keyPressed(int key){
+
+}
+
+//--------------------------------------------------------------
+void testApp::keyReleased(int key){
+
+}
+
+//--------------------------------------------------------------
+void testApp::mouseMoved(int x, int y){
+
+}
+
+//--------------------------------------------------------------
+void testApp::mouseDragged(int r, int g, int button){
+
+}
+
+//--------------------------------------------------------------
+void testApp::mousePressed(int x, int y, int button){
+    ofBackground(255, 255, 255);
+}
+
+//--------------------------------------------------------------
+void testApp::mouseReleased(int x, int y, int button){
+
+}
+
+//--------------------------------------------------------------
+void testApp::windowResized(int w, int h){
+
+}
+
+
+
+//--------------------------------------------------------------
+
